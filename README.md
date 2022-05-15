@@ -15,5 +15,3 @@ STAT Major
     │
     ├── media           # Contain only media files (.png, .jpg, .jpeg, .mp4, etc...)
     └── .htaccess
-
-
