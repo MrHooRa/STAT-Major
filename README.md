@@ -6,6 +6,7 @@ STAT Major
     
     STAT_Major
     ├── config          # Store the configuration file such as database configuration
+    ├── media           # Contain only media files (.png, .jpg, .jpeg, .mp4, etc...)
     ├── public          # Store the public files accessed directly by the users
     │  └── index.php    # Home page
     │
@@ -13,5 +14,6 @@ STAT Major
     │  ├── inc          # Store the commonly included files such as the header and footer of a page
     │  └── libs         # Store the library files, e.g., validation, sanitization, etc.
     │
-    ├── media           # Contain only media files (.png, .jpg, .jpeg, .mp4, etc...)
+    ├── template        # Contain temporary templates
+    ├── README.me
     └── .htaccess
