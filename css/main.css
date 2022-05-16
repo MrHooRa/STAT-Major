@@ -1776,34 +1776,3 @@ body.is-article-visible #footer {
 body.is-preload #footer {
 	opacity: 0;
 }
-
-
-
-
-/* Custom */
-.homeBox {
-	border-radius: 0px 0px 0px 0px;
-	-webkit-border-radius: 0px 0px 0px 0px;
-	-moz-border-radius: 0px 0px 0px 0px;
-	background: rgba(18, 18, 18, 0.70);
-	border: 1px hidden rgba(39, 39, 39, 0.8);
-}
-
-.AR {
-	direction: rtl;
-	letter-spacing: 0;
-	font-family: 'Cairo', sans-serif;
-}
-
-.no-space-letter {
-	letter-spacing: 0 !important;
-}
-
-.listOf {
-	font-family: 'Changa', sans-serif;
-}
-
-.link {
-	color: #4a69bd;
-	letter-spacing: 1;
-}
