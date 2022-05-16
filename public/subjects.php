@@ -6,10 +6,10 @@
     <title>المواد الدراسية</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="../css/subject.css">
+    <link rel="stylesheet" href="../src/inc/css/subject.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../src/inc/css/custom.css">
 
 </head>
 
@@ -25,8 +25,8 @@
                     <img class="postcard__img" src="../media/subjects/STAT_337.png" alt="احص 337" />
                 </a>
                 <div class="postcard__text">
-                    <h1 class="postcard__title blue C_rtl C_center"><a href="#" class="C_AR C_bold">&nbsp;تصميم وتحليل
-                            التجارب&nbsp;</a>
+                    <h1 class="postcard__title blue C_rtl C_center"><a href="#" class="C_AR C_bold">تصميم وتحليل
+                            التجارب</a>
                     </h1>
                     <div class="postcard__subtitle medium C_rtl C_AR C_center">
                         احص 337
@@ -45,10 +45,11 @@
                         الالتيني الإغريقي.
                     </div>
                     <ul class="postcard__tagbox C_tags">
-                        <li class="tag__item C_tag">متطلبات التخصص</i></li>
+                        <li class="tag__item C_tag">مواد اجبارية</i></li>
                         <li class="tag__item C_tag"><i class="fas fa-clock mr-2"></i>3 ساعات</li>
+                        <li class="tag__item C_tag"><i class="fas fa-book-open mr-2"></i>المستوى 6</li>
                         <li class="tag__item play blue C_tag">
-                            <a href="#"><i class="fas fa-layer-group mr-2 "></i>أضغط هنا للذهاب إلى ملفات المادة</a>
+                            <a href="#"><i class="fas fa-layer-group mr-2 "></i>أضغط هنا للذهاب إلى محتويات المادة</a>
                         </li>
                     </ul>
                 </div>
@@ -59,8 +60,8 @@
                     <img class="postcard__img" src="../media/subjects/STAT_335.png" alt="احص 335" />
                 </a>
                 <div class="postcard__text">
-                    <h1 class="postcard__title red C_rtl C_center"><a href="#" class="C_AR C_bold">&nbsp;نماذج خطية
-                            معممة&nbsp;</a>
+                    <h1 class="postcard__title red C_rtl C_center"><a href="#" class="C_AR C_bold">نماذج خطية
+                            معممة</a>
                     </h1>
                     <div class="postcard__subtitle medium C_rtl C_AR C_center">
                         احص 335
@@ -72,10 +73,34 @@
                         data.
                     </div>
                     <ul class="postcard__tagbox C_tags">
-                        <li class="tag__item C_tag">متطلبات التخصص</i></li>
+                        <li class="tag__item C_tag">مواد اجبارية</i></li>
                         <li class="tag__item C_tag"><i class="fas fa-clock mr-2"></i>3 ساعات</li>
+                        <li class="tag__item C_tag"><i class="fas fa-book-open mr-2"></i>المستوى السادس</li>
                         <li class="tag__item play red C_tag">
-                            <a href="#"><i class="fas fa-layer-group mr-2 "></i>أضغط هنا للذهاب إلى ملفات المادة</a>
+                            <a href="#"><i class="fas fa-layer-group mr-2 "></i>أضغط هنا للذهاب إلى محتويات المادة</a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="postcard dark green">
+                <a class="postcard__img_link" href="#">
+                    <img class="postcard__img" src="../media/subjects/OPR213.png" alt="بحث 213" />
+                </a>
+                <div class="postcard__text">
+                    <h1 class="postcard__title green C_rtl C_center"><a href="#" class="C_AR C_bold">برمجة خطية</a>
+                    </h1>
+                    <div class="postcard__subtitle medium C_rtl C_AR C_center">
+                        بحث 213
+                    </div>
+                    <!-- <div class="postcard__bar"></div> -->
+                    <div class="postcard__preview-txt C_rtl C_RIGHT C_AR C_top20">تعريف وصياغة مسائل البرمجة الخطية - الحل البياني - مراجعة للجبر الخطي ولتحليل التحدب - جبر طريقة السمبلكس - طريقة السمبلكس الجدولية - طريقة السمبلكس المعدلة - نظرية الثنوية والتفسير الاقتصادي للمسألة الثنوية - تحليل الحساسية - بعض تطبيقات البرمجة الخطية</div>
+                    <ul class="postcard__tagbox C_tags">
+                        <li class="tag__item C_tag">مواد اختيارية</i></li>
+                        <li class="tag__item C_tag"><i class="fas fa-clock mr-2"></i>4 ساعات</li>
+                        <li class="tag__item C_tag"><i class="fas fa-book-open mr-2"></i>المستوى 4 وأكثر</li>
+                        <li class="tag__item play green C_tag">
+                            <a href="#"><i class="fas fa-layer-group mr-2 "></i>أضغط هنا للذهاب إلى محتويات المادة</a>
                         </li>
                     </ul>
                 </div>
