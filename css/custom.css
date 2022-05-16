@@ -7,7 +7,6 @@
 }
 
 .C_AR {
-	direction: rtl;
 	letter-spacing: 0;
 	font-family: 'Cairo', sans-serif;
 }
@@ -23,4 +22,28 @@
 .C_link {
 	color: #4a69bd;
 	letter-spacing: 1;
+}
+
+.C_rtl {
+	direction: rtl;
+}
+
+.C_RIGHT {
+	text-align: right;
+}
+
+.C_bold {
+	font-weight: bold;
+}
+
+.C_tag {
+	font-family: 'Mada', sans-serif;
+}
+
+.C_center{
+	text-align: center;
+}
+
+.C_top20 {
+	margin-top: 20px;
 }

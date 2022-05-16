@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&Cairo&family=Changa&family=Mada&display=swap"); 
 /* This pen */
 body {
   font-family: "Baloo 2", cursive;
@@ -63,7 +63,7 @@ a, a:hover {
   font-size: 1.75rem;
 }
 .postcard .postcard__img {
-  max-height: 180px;
+  max-height: 200px;
   width: 100%;
   object-fit: cover;
   position: relative;
