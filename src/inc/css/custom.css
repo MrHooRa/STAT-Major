@@ -1,0 +1,49 @@
+.C_homeBox {
+	border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	-moz-border-radius: 0px 0px 0px 0px;
+	background: rgba(18, 18, 18, 0.70);
+	border: 1px hidden rgba(39, 39, 39, 0.8);
+}
+
+.C_AR {
+	letter-spacing: 0;
+	font-family: 'Cairo', sans-serif;
+}
+
+.C_no-space-letter {
+	letter-spacing: 0 !important;
+}
+
+.C_listOf {
+	font-family: 'Changa', sans-serif;
+}
+
+.C_link {
+	color: #4a69bd;
+	letter-spacing: 1;
+}
+
+.C_rtl {
+	direction: rtl;
+}
+
+.C_RIGHT {
+	text-align: right;
+}
+
+.C_bold {
+	font-weight: bold;
+}
+
+.C_tag {
+	font-family: 'Mada', sans-serif;
+}
+
+.C_center{
+	text-align: center;
+}
+
+.C_top20 {
+	margin-top: 20px;
+}
