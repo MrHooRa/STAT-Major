@@ -1,6 +1,7 @@
 ![Alt text](media/Banner.png "STAT Major")
 
-This project focuses on assisting undergraduate students with a major in statistics  :D
+This website will orginaizy all statistcs major subjects and thier content (Notes, Past exams, etc...)
+I'll create admin system to add and remove subjects and pages.
 
 ### Project map:
     
