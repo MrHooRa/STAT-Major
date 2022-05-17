@@ -1,3 +1,12 @@
+<?php
+include_once("../src/libs/connection.php");
+include_once("../src/libs/subjects.php");
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="ar">
 
@@ -32,11 +41,11 @@
                         احص 337
                     </div>
 
+                    <!-- Line -->
                     <div style="justify-content: center; display: flex;">
                         <div class="postcard__bar"></div>
                     </div>
 
-                    <!-- <hr class="lineIMX"/> -->
                     <div class="postcard__preview-txt C_rtl C_RIGHT C_AR">
 
                         يهتم المقرر باستعراض أساسيات الاستدلال الإحصائي، المبادئ الرئيسية للتصميم التجريبي (التكرار –
@@ -52,7 +61,7 @@
                     </div>
                     <ul class="postcard__tagbox C_tags">
                         <li class="tag__item C_tag">مواد اجبارية</i></li>
-                        <li class="tag__item C_tag"><i class="fas fa-clock mr-2"></i>3 ساعات</li>
+                        <li class="tag__item C_tag" dir="rtl">3 ساعات <i class="fas fa-clock mr-2"></i>
                         <li class="tag__item C_tag"><i class="fas fa-book-open mr-2"></i>المستوى السادس</li>
                         <li class="tag__item play blue C_tag">
                             <a href="#"><i class="fas fa-layer-group mr-2 "></i>أضغط هنا للذهاب إلى محتويات المادة</a>
@@ -72,15 +81,23 @@
                     <div class="postcard__subtitle medium C_rtl C_AR C_center">
                         احص 335
                     </div>
+
+                    <!-- Line -->
+                    <div style="justify-content: center; display: flex;">
+                        <div class="postcard__bar"></div>
+                    </div>
+
                     <!-- <div class="postcard__bar"></div> -->
-                    <div class="postcard__preview-txt C_top20">
+                    <div class="postcard__preview-txt">
                         To introduce the theoretical and applied concepts and principles of generalized linear models to
-                        the students. This will help them in how to select the appropriate model and how to analyze the
+                        the students.
+                        <br>
+                        This will help them in how to select the appropriate model and how to analyze the
                         data.
                     </div>
                     <ul class="postcard__tagbox C_tags">
                         <li class="tag__item C_tag">مواد اجبارية</i></li>
-                        <li class="tag__item C_tag"><i class="fas fa-clock mr-2"></i>3 ساعات</li>
+                        <li class="tag__item C_tag" dir="rtl">3 ساعات <i class="fas fa-clock mr-2"></i>
                         <li class="tag__item C_tag"><i class="fas fa-book-open mr-2"></i>المستوى السادس</li>
                         <li class="tag__item play red C_tag">
                             <a href="#"><i class="fas fa-layer-group mr-2 "></i>أضغط هنا للذهاب إلى محتويات المادة</a>
@@ -99,12 +116,17 @@
                     <div class="postcard__subtitle medium C_rtl C_AR C_center">
                         بحث 213
                     </div>
-                    <!-- <div class="postcard__bar"></div> -->
-                    <div class="postcard__preview-txt C_rtl C_RIGHT C_AR C_top20">تعريف وصياغة مسائل البرمجة الخطية - الحل البياني - مراجعة للجبر الخطي ولتحليل التحدب - جبر طريقة السمبلكس - طريقة السمبلكس الجدولية - طريقة السمبلكس المعدلة - نظرية الثنوية والتفسير الاقتصادي للمسألة الثنوية - تحليل الحساسية - بعض تطبيقات البرمجة الخطية</div>
+                    
+                    <!-- Line -->
+                    <div style="justify-content: center; display: flex;">
+                        <div class="postcard__bar"></div>
+                    </div>
+
+                    <div class="postcard__preview-txt C_rtl C_RIGHT C_AR">تعريف وصياغة مسائل البرمجة الخطية - الحل البياني - مراجعة للجبر الخطي ولتحليل التحدب - جبر طريقة السمبلكس - طريقة السمبلكس الجدولية - طريقة السمبلكس المعدلة - نظرية الثنوية والتفسير الاقتصادي للمسألة الثنوية - تحليل الحساسية - بعض تطبيقات البرمجة الخطية</div>
                     <ul class="postcard__tagbox C_tags">
                         <li class="tag__item C_tag">مواد اختيارية</i></li>
-                        <li class="tag__item C_tag"><i class="fas fa-clock mr-2"></i>4 ساعات</li>
-                        <li class="tag__item C_tag"><i class="fas fa-book-open mr-2"></i>المستوى 4 وأكثر</li>
+                        <li class="tag__item C_tag" dir="rtl">4 ساعات <i class="fas fa-clock mr-2"></i></li>
+                        <li class="tag__item C_tag"><i class="fas fa-book-open mr-2"></i>المستوى الرابع وأكثر</li>
                         <li class="tag__item play green C_tag">
                             <a href="#"><i class="fas fa-layer-group mr-2 "></i>أضغط هنا للذهاب إلى محتويات المادة</a>
                         </li>
