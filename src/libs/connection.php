@@ -1,13 +1,18 @@
 <?php
 
-/**
+//==================================================
+ /**
  * This file contain all functions for database
+ * 
+ * Priority: 1
  * 
  * Used in:
  *      ./public/subject.php
+ * 
+ * Need to:
+ *      ./config/config.php             Priority: 0
  */
-
-
+//==================================================
 
 /*
  * 
@@ -20,7 +25,8 @@
  *      <string> $DB_NAME => Database name.                
  * 
  * Return Value: 
- *      <mysqli, bool> The connection if connected successfuly into the database, False otherwise.
+ *      <mysqli> The connection if connected successfuly into the database.
+ *      <bool:False> If there is no connection
  * 
  * Description: 
  * 
