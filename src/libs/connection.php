@@ -144,7 +144,7 @@ function select($conn, $sql)
  * Parameters   : <mysqli> $conn => Database connection.
  * 
  * Return Value : 
- *      <int> Database connection state (0 => No connection, 1 => Connected, 2 => Error)
+ *      <int> Database connection state (0 => No connection, 1 => Connected, 2 => Error, 3 => Error while check)
  * 
  * Description: 
  * 
@@ -157,18 +157,22 @@ function select($conn, $sql)
  */
 function connectionState($conn)
 {
-    /* check connection */
-    if ($conn->connect_errno) {
-        // Connection failed
-        return 2;
-    }
+    try {
+        /* check connection */
+        if ($conn->connect_errno) {
+            // Connection failed
+            return 2;
+        }
 
-    /* check if server is alive */
-    if ($conn->ping()) {
-        // There is connection
-        return 1;
-    } else {
-        // There is no connection to database
-        return 0;
+        /* check if server is alive */
+        if ($conn->ping()) {
+            // There is connection
+            return 1;
+        } else {
+            // There is no connection to database
+            return 0;
+        }
+    } catch (Exception $e) {
+        return 3;
     }
 }
