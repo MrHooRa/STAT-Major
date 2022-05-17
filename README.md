@@ -1,6 +1,8 @@
 STAT Major
 ============================
 
+![Alt text](media/Banner.png "STAT Major")
+
 This project focuses on assisting undergraduate students with a major in statistics  :D
 
 ### Project map:
