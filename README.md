@@ -23,7 +23,7 @@ I'll create admin system to add and remove subjects and pages.
     │  │
     │  └── libs         # Store the library files, e.g., validation, sanitization, etc.
     │     ├── connection.php    # Contain all database function (such as connect, select, etc...)
-    │     └── function.php      # Contain all functions used in pages from public folder
+    │     └── subjects.php      # Contain all functions used subject page in public folder.
     │
     ├── .htaccess
     └── README.me
