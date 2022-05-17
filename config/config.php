@@ -1,5 +1,19 @@
 <?php
 
+//==================================================
+/**
+ * Store website configuration 
+ * 
+ * Priority: 0
+ * 
+ * Used in:
+ *      ./public/subject.php
+ * 
+ * Need to:
+ *      -
+ */
+//==================================================
+
 // Website info:-
 $PATH = "http://localhost/STAT-Major";        // Main project path (contain https://domain)
 
@@ -14,6 +28,6 @@ $dbName = "stat_major";
 
 // DATABASE tables:-
 $TABLE_SUBJECTS = "subjects";   // Subject table
-$TABLE_CATEGORY = "category";   // Category table (ID, name)
+$TABLE_CATEGORY = "categories"; // Category table (ID, category_name)
 
 // -------------------------------------- //
