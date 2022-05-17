@@ -31,8 +31,14 @@
                     <div class="postcard__subtitle medium C_rtl C_AR C_center">
                         احص 337
                     </div>
-                    <!-- <div class="postcard__bar"></div> -->
-                    <div class="postcard__preview-txt C_rtl C_RIGHT C_AR C_top20">
+
+                    <div style="justify-content: center; display: flex;">
+                        <div class="postcard__bar"></div>
+                    </div>
+
+                    <!-- <hr class="lineIMX"/> -->
+                    <div class="postcard__preview-txt C_rtl C_RIGHT C_AR">
+
                         يهتم المقرر باستعراض أساسيات الاستدلال الإحصائي، المبادئ الرئيسية للتصميم التجريبي (التكرار –
                         العشوائية - القطاعات، مقارنات التجارب البسيطة).
                         <br>
@@ -47,7 +53,7 @@
                     <ul class="postcard__tagbox C_tags">
                         <li class="tag__item C_tag">مواد اجبارية</i></li>
                         <li class="tag__item C_tag"><i class="fas fa-clock mr-2"></i>3 ساعات</li>
-                        <li class="tag__item C_tag"><i class="fas fa-book-open mr-2"></i>المستوى 6</li>
+                        <li class="tag__item C_tag"><i class="fas fa-book-open mr-2"></i>المستوى السادس</li>
                         <li class="tag__item play blue C_tag">
                             <a href="#"><i class="fas fa-layer-group mr-2 "></i>أضغط هنا للذهاب إلى محتويات المادة</a>
                         </li>
