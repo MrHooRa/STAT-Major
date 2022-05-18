@@ -1,7 +1,7 @@
 ![Alt text](media/Banner.png "STAT Major")
 
-This website will organize all statistics major subjects and their content (Notes, Past exams, etc…).  
-I’ll create admin system to add and remove subjects and pages.
+This website will orginaizy all statistcs major subjects and thier content (Notes, Past exams, etc...)
+I'll create admin system to add and remove subjects and pages.
 
 ### Project map:
     
@@ -23,7 +23,7 @@ I’ll create admin system to add and remove subjects and pages.
     │  │
     │  └── libs         # Store the library files, e.g., validation, sanitization, etc.
     │     ├── connection.php    # Contain all database function (such as connect, select, etc...)
-    │     └── function.php      # Contain all functions used in pages from public folder
+    │     └── subjects.php      # Contain all functions used subject page in public folder.
     │
     ├── .htaccess
     └── README.me
