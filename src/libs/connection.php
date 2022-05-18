@@ -1,16 +1,32 @@
 <?php
-// Connect to database (PhpMyAdmin)
+
+//==================================================
+ /**
+ * This file contain all functions for database
+ * 
+ * Priority: 1
+ * 
+ * Used in:
+ *      ./public/subject.php
+ * 
+ * Need to:
+ *      ./config/config.php             Priority: 0
+ */
+//==================================================
 
 /*
  * 
  * connect( $DB_HOST, $DB_USER, $DB_PASS, $DB_NAME )
  * 
- * Parameters   : <string> $DB_HOST => Database host.
- *                <string> $DB_USER => Database username.
- *                <string> $DB_PASS => Database password.
- *                <string> $DB_NAME => Database name.                
+ * Parameters: 
+ *      <string> $DB_HOST => Database host.
+ *      <string> $DB_USER => Database username.
+ *      <string> $DB_PASS => Database password.
+ *      <string> $DB_NAME => Database name.                
  * 
- * Return Value : <mysqli, bool> The connection if connected successfuly into the database, False otherwise.
+ * Return Value: 
+ *      <mysqli> The connection if connected successfuly into the database.
+ *      <bool:False> If there is no connection
  * 
  * Description: 
  * 
@@ -38,9 +54,11 @@ function connect(string $DB_HOST, string $DB_USER, string $DB_PASS, string $DB_N
  * 
  * close( $conn ) 
  * 
- * Parameters   : $conn => Database connection.
+ * Parameters: 
+ *      <mysqli> $conn => Database connection.
  * 
- * Return Value : <bool> True if database connection is closed, False otherwise.
+ * Return Value: 
+ *      <bool> True if database connection is closed, False otherwise.
  * 
  * Description: 
  * 
@@ -70,10 +88,12 @@ function closeConn($conn)
  * 
  * insert( $conn, $sql ) 
  * 
- * Parameters   : $conn => Database connection.
- *                <string> $sql  => SQL INSERT Statement.
+ * Parameters: 
+ *      <mysqli> $conn => Database connection.
+ *      <string> $sql  => SQL INSERT Statement.
  * 
- * Return Value : <bool> True if inserted successfuly, False(with error msg) otherwise.
+ * Return Value: 
+ *      <bool> True if inserted successfuly, False(with error msg) otherwise.
  * 
  * Description: 
  * 
@@ -97,10 +117,12 @@ function insert($conn, $sql)
  * 
  * select( $conn, $sql ) 
  * 
- * Parameters   : $conn => Database connection.
- *                <string> $sql  => SQL SELECT Statement.
+ * Parameters: 
+ *      <mysqli> $conn => Database connection.
+ *      <string> $sql  => SQL SELECT Statement.
  * 
- * Return Value : <array> The data returned is stored in a result table, called the result-set.
+ * Return Value: 
+ *      <array> The data returned is stored in a result table, called the result-set.
  * 
  * Description: 
  * 
@@ -118,5 +140,45 @@ function select($conn, $sql)
         return mysqli_query($conn, $sql);
     } catch (Exception $e) {
         return False;
+    }
+}
+
+/*
+ * 
+ * connectionState( $conn ) 
+ * 
+ * Parameters   : <mysqli> $conn => Database connection.
+ * 
+ * Return Value : 
+ *      <int> Database connection state (0 => No connection, 1 => Connected, 2 => Error, 3 => Error while check)
+ * 
+ * Description: 
+ * 
+ *      This function will tell the state of the connection to database
+ * 
+ * Example:
+ * $sql = "SELECT * FROM `table_name`";
+ * $result = select($conn, $sql);
+ * 
+ */
+function connectionState($conn)
+{
+    try {
+        /* check connection */
+        if ($conn->connect_errno) {
+            // Connection failed
+            return 2;
+        }
+
+        /* check if server is alive */
+        if ($conn->ping()) {
+            // There is connection
+            return 1;
+        } else {
+            // There is no connection to database
+            return 0;
+        }
+    } catch (Exception $e) {
+        return 3;
     }
 }
