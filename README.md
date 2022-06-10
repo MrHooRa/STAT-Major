@@ -23,8 +23,10 @@ I'll create admin system to add and remove subjects and pages.
     │  │
     │  └── libs         # Store the library files, e.g., validation, sanitization, etc.
     │     ├── manage            # All functions for manage dashboard.
-    │     ├── connection.php    # Contain all database function (such as connect, select, etc...)
-    │     └── subjects.php      # Contain all functions used subject page in public folder.
+    │     │  └── manage_subjects.php    # Contain all functions for manage subjects (Such as add, edit and remove subjects)
+    │     │
+    │     ├── database.php      # Contain all database function (such as connect, select, etc...)
+    │     └── subjectsFun.php   # Contain all functions used subject page in public folder.
     │
     ├── manage          # Dashboard to manage the website (Access only by Admin).
     │

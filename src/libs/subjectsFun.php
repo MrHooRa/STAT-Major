@@ -7,11 +7,11 @@
  * Priority: 2
  * 
  * Used in:
- *      ./public/subject.php
+ *      ./public/subjects.php
  * 
  * Need to:
  *      ./config/config.php             Priority: 0
- *      ./src/lib/connection.php        Priority: 1
+ *      ./src/lib/database.php          Priority: 1
  */
 //==================================================
 

@@ -5,16 +5,14 @@
  * 
  * Need to:
  *      ./config/config.php             Priority: 0
- *      ./src/lib/connection.php        Priority: 1
- *      ./src/libs/subjects.php         Priority: 2
+ *      ./src/lib/database.php          Priority: 1
+ *      ./src/libs/subjectsFun.php      Priority: 2
  */
 //==================================================
 
 include_once("../config/config.php");
-include_once("../src/libs/connection.php");
-include_once("../src/libs/subjects.php");
-
-
+include_once("../src/libs/database.php");
+include_once("../src/libs/subjectsFun.php");
 ?>
 
 <!DOCTYPE html>
@@ -72,3 +70,7 @@ SOFTWARE.
 </body>
 
 </html>
+
+<?php
+closeConn($conn);
+?>
