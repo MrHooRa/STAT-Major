@@ -133,7 +133,7 @@ function subjectFormat($row, $color)
  * displaySubjects($conn, array("subjects", "categories"));
  * 
  */
-function displaySubjects($conn, $table = array())
+function displaySubjects($conn, $tableNames = array())
 {
     // Check connection state
     $dbState = ConnectionState($conn);
@@ -144,7 +144,7 @@ function displaySubjects($conn, $table = array())
     $color = "blue";
 
     // Get data
-    $SELECT_subjects_SQL = "SELECT * FROM `" . $table[0] . "` INNER JOIN `" . $table[1] . "` ON `" . $table[0] . "`.`subject_category` = `" . $table[1] . "`.`id`";
+    $SELECT_subjects_SQL = "SELECT * FROM `" . $tableNames[0] . "` INNER JOIN `" . $tableNames[1] . "` ON `" . $tableNames[0] . "`.`subject_category` = `" . $tableNames[1] . "`.`id`";
     $result = select($conn, $SELECT_subjects_SQL);
 
     if ($result->num_rows > 0)

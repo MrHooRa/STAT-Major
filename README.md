@@ -25,5 +25,7 @@ I'll create admin system to add and remove subjects and pages.
     │     ├── connection.php    # Contain all database function (such as connect, select, etc...)
     │     └── subjects.php      # Contain all functions used subject page in public folder.
     │
+    ├── manage          # To manage the website (Access only by Admin)
+    │
     ├── .htaccess
     └── README.me
