@@ -22,10 +22,11 @@ I'll create admin system to add and remove subjects and pages.
     │  │  └── css               # Store all css files
     │  │
     │  └── libs         # Store the library files, e.g., validation, sanitization, etc.
+    │     ├── manage            # All functions for manage dashboard.
     │     ├── connection.php    # Contain all database function (such as connect, select, etc...)
     │     └── subjects.php      # Contain all functions used subject page in public folder.
     │
-    ├── manage          # To manage the website (Access only by Admin)
+    ├── manage          # Dashboard to manage the website (Access only by Admin).
     │
     ├── .htaccess
     └── README.me
