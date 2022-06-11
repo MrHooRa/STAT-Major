@@ -1,4 +1,5 @@
 <?php
+// TO-DO
 include_once("../../../config/config.php");
 include_once("../database.php");
 
@@ -37,7 +38,7 @@ $conn = connect($dbHost, $dbUser, $dbPass, $dbName);
  *      Insert new data in specifc table name.
  * 
  * Example:
- * insertNewSubject("users", array('name', 'email'), array('salman', 'example@example.com));
+ * insertNewSubject("users", array('name', 'email'), array('salman', 'salman@example.com));
  * 
  */
 function insertNewSubject($conn, $tableName, $vars, $values)
@@ -45,11 +46,53 @@ function insertNewSubject($conn, $tableName, $vars, $values)
     $vars = convertArrayToString($vars, False);
     $values = convertArrayToString($values, True);
 
-    $sqlInsert = "INSERT INTO `" . $tableName . "`(" . $vars . ") VALUES (" . $values . ")";
-    if (insert($conn, $sqlInsert))
+    $sqlInsert = "INSERT INTO `" . $tableName . "` (" . $vars . ") VALUES (" . $values . ")";
+    if (query($conn, $sqlInsert))
         return True;
     else
         return False;
+}
+
+/*
+ * 
+ * getSubject( $conn, $tableName, $id )
+ * 
+ * Parameters: 
+ *      <mysqli> $conn => Database connection.
+ *      <string> $tableName => Name of the table that will get subject from it.
+ *      <string> $id => subject id in the table.
+ * 
+ * Return Value: 
+ *      <array> Contain all subject details.
+ * 
+ * Description: 
+ * 
+ *      Get sbuject details such as name, credit and others.
+ * 
+ * Example:
+ * getSubject($conn, "subjects", 1)['name'];
+ * 
+ */
+function getSubject($conn, $tableName, $id)
+{
+    $sqlSelect = "SELECT * FROM `" . $tableName . "` WHERE id = " . $id;
+    if ($result = query($conn, $sqlSelect)) {
+        while ($row = $result->fetch_row()) {
+            $subject = array(
+                "id" => $row[0],
+                "name" => $row[1],
+                "code" => $row[2],
+                "level" => $row[3],
+                "description" => $row[4],
+                "credits" => $row[5],
+                "category" => $row[6],
+                "files_path" => $row[7],
+                "image_path" => $row[8]
+            );
+        }
+        $result->free_result();
+    }
+    return $subject;
 }
 
 /*
@@ -87,7 +130,36 @@ function convertArrayToString($vars, $comma = False)
     return $varsList;
 }
 
-// Example
+/*
+ * 
+ * deleteSubject( $arr, $tableName, $id )
+ * 
+ * Parameters: 
+ *      <mysqli> $conn => Database connection.
+ *      <string> $tableName => Name of the table that will get subject from it.
+ *      <string> $id => subject id in the table.
+ * 
+ * Return Value: 
+ *      <string> string of list.
+ * 
+ * Description: 
+ * 
+ *      Delete row with specifc id in table name.
+ * 
+ * Example:
+ * deleteSubject( $conn, "subjects", 4 )
+ * 
+ */
+function deleteSubject($conn, $tableName, $id)
+{
+    $sqlDelete = "DELETE FROM `" . $tableName . "` WHERE `" . $tableName . "`.`id` = " . $id;
+    if (query($conn, $sqlDelete))
+        return True;
+    else
+        return False;
+}
+
+// // Example (Insert new subject)
 // $varsList = array("subject_name", "subject_code", "subject_level", "subject_description", "subject_credits", "subject_category", "subject_files_path", "subject_image_path");
 // $valuesList = array('Salman', 'CSS100', '9', 'This is description :D', '4', '2', 'NONE', 'NONE');
 
