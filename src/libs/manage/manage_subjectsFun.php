@@ -166,8 +166,6 @@ function updateSubject($conn, $tableName, $id, $vars, $values)
         return False;
 }
 
-updateSubject($conn, "subjects", 21, array("subject_name", "subject_code"), array("admin123", "STAT 409"));
-
 /*
  * 
  * convertArrayToString( $arr, $comma )
@@ -202,10 +200,3 @@ function convertArrayToString($vars, $comma = False)
 
     return $varsList;
 }
-
-// // Example (Insert new subject)
-// $varsList = array("subject_name", "subject_code", "subject_level", "subject_description", "subject_credits", "subject_category", "subject_files_path", "subject_image_path");
-// $valuesList = array('Salman', 'CSS100', '9', 'This is description :D', '4', '2', 'NONE', 'NONE');
-
-// if (insertNewSubject($conn, "subjects", $varsList, $valuesList))
-//     echo "Inserted sucssesfuly \n\n";
