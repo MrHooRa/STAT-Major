@@ -97,6 +97,35 @@ function getSubject($conn, $tableName, $id)
 
 /*
  * 
+ * deleteSubject( $arr, $tableName, $id )
+ * 
+ * Parameters: 
+ *      <mysqli> $conn => Database connection.
+ *      <string> $tableName => Name of the table that will get subject from it.
+ *      <string> $id => subject id in the table.
+ * 
+ * Return Value: 
+ *      <string> string of list.
+ * 
+ * Description: 
+ * 
+ *      Delete row with specifc id in table name.
+ * 
+ * Example:
+ * deleteSubject( $conn, "subjects", 4 )
+ * 
+ */
+function deleteSubject($conn, $tableName, $id)
+{
+    $sqlDelete = "DELETE FROM `" . $tableName . "` WHERE `" . $tableName . "`.`id` = " . $id;
+    if (query($conn, $sqlDelete))
+        return True;
+    else
+        return False;
+}
+
+/*
+ * 
  * convertArrayToString( $arr, $comma )
  * 
  * Parameters: 
@@ -128,35 +157,6 @@ function convertArrayToString($vars, $comma = False)
         $varsList = $varsList . ", " . $comma . $vars[$i] . $comma;
 
     return $varsList;
-}
-
-/*
- * 
- * deleteSubject( $arr, $tableName, $id )
- * 
- * Parameters: 
- *      <mysqli> $conn => Database connection.
- *      <string> $tableName => Name of the table that will get subject from it.
- *      <string> $id => subject id in the table.
- * 
- * Return Value: 
- *      <string> string of list.
- * 
- * Description: 
- * 
- *      Delete row with specifc id in table name.
- * 
- * Example:
- * deleteSubject( $conn, "subjects", 4 )
- * 
- */
-function deleteSubject($conn, $tableName, $id)
-{
-    $sqlDelete = "DELETE FROM `" . $tableName . "` WHERE `" . $tableName . "`.`id` = " . $id;
-    if (query($conn, $sqlDelete))
-        return True;
-    else
-        return False;
 }
 
 // // Example (Insert new subject)
