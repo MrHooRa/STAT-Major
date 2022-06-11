@@ -84,56 +84,28 @@ function closeConn($conn)
     }
 };
 
-/*
- * 
- * insert( $conn, $sql ) 
- * 
- * Parameters: 
- *      <mysqli> $conn => Database connection.
- *      <string> $sql  => SQL INSERT Statement.
- * 
- * Return Value: 
- *      <bool> True if inserted successfuly, False(with error msg) otherwise.
- * 
- * Description: 
- * 
- *      This function will insert data to database
- * 
- * Example:
- * $sql = "INSERT INTO `table_name`(`id`, `name`) VALUES ('[value-id]','[value-name]')";
- * insert($conn, $sql)
- * 
- */
-function insert($conn, $sql)
-{
-    if ($conn->query($sql) === TRUE)
-        return True;
-    else
-        return False;
-}
 
 /*
  * 
- * select( $conn, $sql ) 
+ * query( $conn, $sql ) 
  * 
  * Parameters: 
  *      <mysqli> $conn => Database connection.
- *      <string> $sql  => SQL SELECT Statement.
+ *      <string> $sql  => SQL Statement.
  * 
  * Return Value: 
- *      <array> The data returned is stored in a result table, called the result-set.
+ *      <mysqli_query> The query you want.
  * 
  * Description: 
  * 
- *      This function will send the query
- *      then get the result of the query if exist
+ *      This function will send the query.
  * 
  * Example:
  * $sql = "SELECT * FROM `table_name`";
- * $result = select($conn, $sql);
+ * $result = query($conn, $sql);
  * 
  */
-function select($conn, $sql)
+function query($conn, $sql)
 {
     try {
         return mysqli_query($conn, $sql);
