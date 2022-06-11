@@ -1,7 +1,7 @@
 <?php
 
 //==================================================
- /**
+/**
  * This file contain all functions for database
  * 
  * Priority: 1
@@ -106,11 +106,10 @@ function closeConn($conn)
  */
 function insert($conn, $sql)
 {
-    if ($conn->query($sql) === TRUE) {
+    if ($conn->query($sql) === TRUE)
         return True;
-    } else {
+    else
         return False;
-    }
 }
 
 /*
@@ -165,19 +164,17 @@ function connectionState($conn)
 {
     try {
         /* check connection */
-        if ($conn->connect_errno) {
+        if ($conn->connect_errno)
             // Connection failed
             return 2;
-        }
 
         /* check if server is alive */
-        if ($conn->ping()) {
+        if ($conn->ping())
             // There is connection
             return 1;
-        } else {
+        else
             // There is no connection to database
             return 0;
-        }
     } catch (Exception $e) {
         return 3;
     }
