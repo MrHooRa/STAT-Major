@@ -1,11 +1,12 @@
 <?php
-// TO-DO
+// TO-DO: remove includes form this file 
+// AND create new file in manage folder (in root folder) with name subjects.php 
 include_once("../../../config/config.php");
 include_once("../database.php");
 
 //==================================================
 /**
- * This file contain all functions for manage subjects (Such as add, edit and remove subjects)
+ * This file contain all functions for manage subjects (Such as add, edit and delete subjects)
  * 
  * Priority: 2
  * 
