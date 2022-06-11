@@ -145,7 +145,7 @@ function displaySubjects($conn, $tableNames = array())
 
     // Get data
     $SELECT_subjects_SQL = "SELECT * FROM `" . $tableNames[0] . "` INNER JOIN `" . $tableNames[1] . "` ON `" . $tableNames[0] . "`.`subject_category` = `" . $tableNames[1] . "`.`id`";
-    $result = select($conn, $SELECT_subjects_SQL);
+    $result = query($conn, $SELECT_subjects_SQL);
 
     if ($result->num_rows > 0)
         while ($row = $result->fetch_assoc()) {
