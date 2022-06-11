@@ -1,8 +1,4 @@
 <?php
-// TO-DO: remove includes form this file 
-// AND create new file in manage folder (in root folder) with name subjects.php 
-include_once("../../../config/config.php");
-include_once("../database.php");
 
 //==================================================
 /**
@@ -18,9 +14,6 @@ include_once("../database.php");
  *      ./src/lib/database.php          Priority: 1
  */
 //==================================================
-
-// TO-DO: Remove this
-$conn = connect($dbHost, $dbUser, $dbPass, $dbName);
 
 /*
  * 
