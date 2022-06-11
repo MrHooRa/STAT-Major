@@ -19,6 +19,7 @@ include_once("../database.php");
  */
 //==================================================
 
+// TO-DO: Remove this
 $conn = connect($dbHost, $dbUser, $dbPass, $dbName);
 
 /*
@@ -28,8 +29,8 @@ $conn = connect($dbHost, $dbUser, $dbPass, $dbName);
  * Parameters: 
  *      <mysqli> $conn => Database connection.
  *      <string> $tableName => Name of the table that will insert new data in it.
- *      <array> $vars => Array should contain variables name from databse column.
- *      <array> $values => value of the vars.
+ *      <array> $vars => Array should contain variables name from database column.
+ *      <array> $values => values of the vars.
  * 
  * Return Value: 
  *      <bool> True if inserted successfuly, False otherwise.
@@ -127,11 +128,53 @@ function deleteSubject($conn, $tableName, $id)
 
 /*
  * 
+ * updateSubject( $conn, $tableName, $id, $vars, $values )
+ * 
+ * Parameters: 
+ *      <mysqli> $conn => Database connection.
+ *      <string> $tableName => Name of the table that will get subject from it.
+ *      <string> $id => subject id in the table.
+ *      <array>  $vars =>
+ *      <array>  $values =>
+ * 
+ * Return Value: 
+ *      <bool> True if updated successfuly, False otherwise.
+ * 
+ * Description: 
+ * 
+ *      Update values of specifc row of data in database.
+ * 
+ * Example:
+ * // Update name from [old.name] to [admin]
+ * updateSubject( $conn, "subjects", 1, array("name"), array("admin") )
+ * 
+ */
+function updateSubject($conn, $tableName, $id, $vars, $values)
+{
+    if (count($vars) != count($values))
+        return False;
+
+    $varsAndValues = "`" . $vars[0] . "` = '" . $values[0] . "'";
+    for ($i = 1; $i < count($vars); $i += 1) {
+        $varsAndValues = $varsAndValues . ", `" . $vars[$i] . "` = '" . $values[$i] . "'";
+    }
+
+    $sqlUpdate = "UPDATE `" . $tableName . "` SET " . $varsAndValues . " WHERE `" . $tableName . "`.`id` = " . $id;
+    if (query($conn, $sqlUpdate))
+        return True;
+    else
+        return False;
+}
+
+updateSubject($conn, "subjects", 21, array("subject_name", "subject_code"), array("admin123", "STAT 409"));
+
+/*
+ * 
  * convertArrayToString( $arr, $comma )
  * 
  * Parameters: 
  *      <array> $arr => Array contain list.
- *      <bool>  $comma => If true, replace ` -> '
+ *      <bool>  $comma => If true, replace (`) -> (')
  * 
  * Return Value: 
  *      <string> string of list.
