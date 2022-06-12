@@ -3,8 +3,8 @@
 This website will orginaizy all statistcs major subjects and thier content (Notes, Past exams, etc...)
 I'll create admin system to add and remove subjects and pages.
 
-### Project map:
-    
+### Project map
+
     STAT_Major
     ├── config          # Store the configuration file such as database configuration
     │  └── config.php   # All configuration
