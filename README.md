@@ -30,6 +30,8 @@ I'll create admin system to add and remove subjects and pages.
     │     └── subjectsFun.php   # Contain all functions used subject page in public folder.
     │
     ├── manage          # Dashboard to manage the website (Access only by Admin).
+    │  ├── index.php    # Home page, for display some statistics, latest events and top members.
+    │  └── subjects.php # Display all subjects and you can add, change and delete subjects.
     │
     ├── .htaccess
     └── README.me
