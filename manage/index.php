@@ -2,6 +2,7 @@
 //==================================================
 /**
  * This's home page
+ * getPageHead($pageId) [This page id is 1]
  *  
  * Need to:
  *      ./config/config.php             Priority: 0
@@ -11,6 +12,7 @@
 
 // Get header
 include_once("./src/libs/header.php");
+getPageHead(1, "لوحة التحكم");
 ?>
 <div class="page-body">
    <div class="container-xl">
