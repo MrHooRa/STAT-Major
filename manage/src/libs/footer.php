@@ -2,7 +2,8 @@
 
 //==================================================
 /**
- * This is defualt footer for all manage pages
+ * This is defualt footer for all manage pages.
+ * Note: This footer contain modal for new event!
  * 
  * Priority: +3
  * 
