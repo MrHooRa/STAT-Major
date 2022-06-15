@@ -7,6 +7,8 @@
  * Need to:
  *      ./config/config.php             Priority: 0
  *      ./src/lib/database.php          Priority: 1
+ *      ./manage/src/lib/header.php     Priority: +3
+ *      ./manage/src/lib/footer.php     Priority: +3
  */
 //==================================================
 
