@@ -1,7 +1,8 @@
 <?php
 //==================================================
 /**
- * This's subject page, you can add, change and delete subjects
+ * This's subject page, you can add, change and delete subjects.
+ * getPageHead($pageId) [This page id is 3]
  *  
  * Need to:
  *      ./config/config.php             Priority: 0
@@ -11,6 +12,7 @@
 
 // Get header
 include_once("./src/libs/header.php");
+getPageHead(3, "لوحة التحكم");
 ?>
 
 <div class="page-body">
