@@ -67,7 +67,7 @@ if (isset($_POST["query"])) {
 
     $data = array();
 
-    $limit = 5;
+    $limit = 6;
 
     $page = 1;
 
@@ -159,7 +159,7 @@ if (isset($_POST["query"])) {
             $format_string = format($row);
             $subject_credits = $format_string["subject_credits"];
             $subject_level = $format_string["subject_level"];
-            
+
             $data[] = array(
                 'subject_id'    =>  $row["id"],
                 'subject_name'  =>  $row["subject_name"],
@@ -170,7 +170,7 @@ if (isset($_POST["query"])) {
         }
     }
 
-    $pagination_html = '<ul class="pagination m-0 ms-auto">';
+    $pagination_html = '';
 
     $total_links = ceil($total_data / $limit);
 
@@ -180,17 +180,17 @@ if (isset($_POST["query"])) {
 
     $page_link = '';
 
-    if ($total_links > 4) {
-        if ($page < 5) {
-            for ($count = 1; $count <= 5; $count++) {
+    if ($total_links > $limit - 1) {
+        if ($page < 4) {
+            for ($count = 1; $count <= 3; $count++) {
                 $page_array[] = $count;
             }
             $page_array[] = '...';
             $page_array[] = $total_links;
         } else {
-            $end_limit = $total_links - 5;
+            $end_limit = $total_links - 2;
 
-            if ($page > $end_limit) {
+            if ($page >= $end_limit) {
                 $page_array[] = 1;
 
                 $page_array[] = '...';
@@ -221,9 +221,7 @@ if (isset($_POST["query"])) {
     for ($count = 0; $count < count($page_array); $count++) {
         if ($page == $page_array[$count]) {
             $page_link .= '
-            <li class="page-item active">
-                <a class="page-link" href="#">' . $page_array[$count] . '</a>
-            </li>
+            <li class="page-item active"><a class="page-link" href="#">' . $page_array[$count] . '</a></li>
 			';
 
             $previous_id = $page_array[$count] - 1;
@@ -231,14 +229,14 @@ if (isset($_POST["query"])) {
             if ($previous_id > 0) {
                 $previous_link = '
                 <li class="page-item">
-                        <a class="page-link" href="javascript:load_data(`' . $_POST["query"] . '`, ' . $previous_id . ')" tabindex="-1">
-                           السابق
-                           <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                              <polyline points="9 6 15 12 9 18"></polyline>
-                           </svg>
-                        </a>
-                     </li>';
+                    <a class="page-link" href="javascript:load_data(`' . $_POST["query"] . '`, ' . $previous_id . ')" tabindex="-1">
+                    السابق
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <polyline points="9 6 15 12 9 18"></polyline>
+                    </svg>
+                    </a>
+                </li>';
                 // $previous_link = '<li class="page-item"><a class="page-link" href="javascript:load_data(`' . $_POST["query"] . '`, ' . $previous_id . ')">السابق</a></li>';
             } else {
                 $previous_link = '
@@ -255,9 +253,9 @@ if (isset($_POST["query"])) {
 
             $next_id = $page_array[$count] + 1;
 
-            if ($next_id >= $total_links) {
+            if ($next_id > $total_links) {
                 $next_link = '
-				<li class="page-item" disabled>
+				<li class="page-item disabled">
                         <a class="page-link" href="#" aria-disabled="true">
                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -270,7 +268,7 @@ if (isset($_POST["query"])) {
             } else {
                 $next_link = '
                 <li class="page-item">
-                <a class="page-link" href="javascript:load_data(`' . $_POST["query"] . '`, ' . $next_id . ')>
+                <a class="page-link" href="javascript:load_data(`' . $_POST["query"] . '`, ' . $next_id . ')">
                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                       <polyline points="15 6 9 12 15 18"></polyline>
@@ -283,9 +281,6 @@ if (isset($_POST["query"])) {
             if ($page_array[$count] == '...') {
                 $page_link .= '
                 <li class="page-item disabled"><a class="page-link" href="#" aria-disabled="true">...</a></li>
-				<li class="page-item disabled">
-	          		<a class="page-link" href="#">...</a>
-	      		</li>
 				';
             } else {
                 $page_link .= '
@@ -299,7 +294,7 @@ if (isset($_POST["query"])) {
     $pagination_html .= $previous_link . $page_link . $next_link;
 
 
-    $pagination_html .= '</ul>';
+    $pagination_html .= '';
 
     $output = array(
         'data'                =>    $data,
