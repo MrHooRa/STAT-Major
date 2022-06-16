@@ -4,7 +4,7 @@
 /**
  * This is defualt header for all manage pages
  * 
- * Priority: +3
+ * Priority: 3*
  * 
  * Used in:
  *      ./manage/index.php             # Home page.

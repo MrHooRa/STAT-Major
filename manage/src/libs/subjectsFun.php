@@ -4,10 +4,10 @@
 /**
  * This file contain all functions for manage subjects (Such as add, edit and delete subjects)
  * 
- * Priority: 2
+ * Priority: 2*
  * 
  * Used in:
- *      ./manage/subjects.php           # Make sure to create new file (Page) to use this file in it.
+ *      ./manage/subjects.php
  * 
  * Need to:
  *      ./config/config.php             Priority: 0

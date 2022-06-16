@@ -5,7 +5,7 @@
  * This is defualt footer for all manage pages.
  * Note: This footer contain modal for new event!
  * 
- * Priority: +3
+ * Priority: 3*
  * 
  * Used in:
  *      ./manage/index.php             # Home page.
