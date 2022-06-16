@@ -20,6 +20,8 @@
 include_once("../../../config/config.php");
 include_once("../../../src/libs/database.php");
 
+// How many subject per page
+$limit = 6;
 
 function format($row)
 {
@@ -66,14 +68,10 @@ if (isset($_POST["query"])) {
     $connect = new PDO("mysql:host=" . $dbHost . "; dbname=" . $dbName . "", $dbUser, $dbPass);
 
     $data = array();
-
-    $limit = 6;
-
     $page = 1;
 
     if ($_POST["page"] > 1) {
         $start = (($_POST["page"] - 1) * $limit);
-
         $page = $_POST["page"];
     } else {
         $start = 0;
@@ -82,9 +80,7 @@ if (isset($_POST["query"])) {
     if ($_POST["query"] != '') {
 
         $condition = preg_replace('/[^A-Za-z0-9-أa-ي\ ]/', '', $_POST["query"]);
-
         $condition = trim($condition);
-
         $condition = str_replace(" ", "%", $condition);
 
         $sample_data = array(
@@ -103,15 +99,11 @@ if (isset($_POST["query"])) {
         $filter_query = $query . ' LIMIT ' . $start . ', ' . $limit . '';
 
         $statement = $connect->prepare($query);
-
         $statement->execute($sample_data);
-
         $total_data = $statement->rowCount();
 
         $statement = $connect->prepare($filter_query);
-
         $statement->execute($sample_data);
-
         $result = $statement->fetchAll();
 
         $replace_array_1 = explode('%', $condition);
@@ -144,15 +136,11 @@ if (isset($_POST["query"])) {
         $filter_query = $query . ' LIMIT ' . $start . ', ' . $limit . '';
 
         $statement = $connect->prepare($query);
-
         $statement->execute();
-
         $total_data = $statement->rowCount();
 
         $statement = $connect->prepare($filter_query);
-
         $statement->execute();
-
         $result = $statement->fetchAll();
 
         foreach ($result as $row) {
@@ -171,13 +159,10 @@ if (isset($_POST["query"])) {
     }
 
     $pagination_html = '';
-
     $total_links = ceil($total_data / $limit);
 
     $previous_link = '';
-
     $next_link = '';
-
     $page_link = '';
 
     if ($total_links > $limit - 1) {
@@ -200,7 +185,6 @@ if (isset($_POST["query"])) {
                 }
             } else {
                 $page_array[] = 1;
-
                 $page_array[] = '...';
 
                 for ($count = $page - 1; $count <= $page + 1; $count++) {
@@ -208,7 +192,6 @@ if (isset($_POST["query"])) {
                 }
 
                 $page_array[] = '...';
-
                 $page_array[] = $total_links;
             }
         }
@@ -292,14 +275,12 @@ if (isset($_POST["query"])) {
     }
 
     $pagination_html .= $previous_link . $page_link . $next_link;
-
-
     $pagination_html .= '';
 
     $output = array(
-        'data'                =>    $data,
-        'pagination'        =>    $pagination_html,
-        'total_data'        =>    $total_data
+        'data'          =>  $data,
+        'pagination'    =>  $pagination_html,
+        'total_data'    =>  $total_data
     );
 
     echo json_encode($output);
