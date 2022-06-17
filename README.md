@@ -15,17 +15,13 @@ I'll create admin system to add and remove subjects and pages.
     │  ├── index.php    # Home page
     │  └── subject.php  # This page will display all subject stored in database
     │
-    ├── src     # Store the source files that should not be exposed to the public
+    ├── src  # Store the source files that should not be exposed to the public
     │  ├── inc      # Store the commonly included files such as the header and footer of a page
     │  │  ├── js        # Store all javascript files
     │  │  ├── webfonts  # For icons
     │  │  └── css       # Store all css files
     │  │
-    │  └── libs # Store the library files, e.g., validation, sanitization, etc.
-    │     ├── manage    # All functions for manage dashboard.
-    │     │  ├── manageFun.php          # Contain general functions for use in manage page
-    │     │  └── manage_subjectsFun.php # Contain all functions for manage subjects (Such as add, edit and remove subjects)
-    │     │
+    │  └── libs  # Store the library files, e.g., validation, sanitization, etc.
     │     ├── database.php      # Contain all database function (such as connect, select, etc...)
     │     └── subjectsFun.php   # Contain all functions used subject page in public folder.
     │
@@ -34,9 +30,10 @@ I'll create admin system to add and remove subjects and pages.
     │  │  ├── inc       # Store the commonly included files such as the header and footer of a page
     │  │  │  └── ...
     │  │  │
-    │  │  └── libs      # Store the library files, e.g., validation, sanitization, etc.
-    │  │     ├── footer.php     # This is defualt footer for all manage pages.
-    │  │     ├── header.php     # This is defualt header for all manage pages.
+    │  │  └── libs  # Store the library files, e.g., validation, sanitization, etc.
+    │  │     ├── footer.php         # This is defualt footer for all manage pages.
+    │  │     ├── header.php         # This is defualt header for all manage pages.
+    │  │     ├── pagination.php     # For subjects.php
     │  │     └── subjectsFun.php    # This file contain all functions for manage subjects (Such as add, edit and delete subjects)
     │  │
     │  ├── index.php    # Home page, for display some statistics, lat~est events and top members.
